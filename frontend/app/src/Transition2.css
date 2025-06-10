@@ -1,0 +1,83 @@
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* 垂直方向に中央 */
+  align-items: center;       /* 水平方向に中央 */
+  height: 100vh;             /* 高さ: 画面全体 */
+  width: 100vw;              /* 幅: 画面全体 */
+}
+
+
+.category-h1 {
+  font-size: 48px;
+  color: black;
+  margin-bottom: 40px;        /* ボタンとの間隔 */
+}
+
+.category-button {
+  margin: 10px;
+  padding: 10px 20px;
+  min-width: 150px;
+  width: auto;
+  font-size: 16px;
+  background-color: #d0f0ff;
+  color: #006400;
+  border: 2px solid #006400;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.category-button:hover {
+  background-color: #b0e0e6;  /* ホバー時の色変更 */
+}
+
+.countdown-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.countdown-number {
+  color: #e63946; /* 赤系のインパクトある色 */
+  font-size: 32px;
+  animation: pulse 1s infinite;
+}
+
+/* アニメーション：脈打つような効果 */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.selected-result {
+  font-size: 24px;
+  font-weight: bold;
+  color: black; /* ドジャーブルー */
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.selected-name {
+  color: #e63946; /* 強調の赤 */
+  font-size: 32px;
+  font-weight: bolder;
+  animation: pop 0.6s ease-in-out;
+}
+
+/* 選択された時にふわっと表示される */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 選んだ料理の名前がポップに強調 */
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}

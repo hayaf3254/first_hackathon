@@ -1,0 +1,6 @@
+fastapi[all]
+SQLAlchemy
+uvicorn[standard]
+pydantic-settings
+PyMySQL       # ★この行を追加★
+cryptography

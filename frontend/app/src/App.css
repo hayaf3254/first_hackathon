@@ -1,0 +1,33 @@
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* 垂直方向に中央 */
+  align-items: center;       /* 水平方向に中央 */
+  height: 100vh;             /* 高さ: 画面全体 */
+  width: 100vw;              /* 幅: 画面全体 */
+}
+
+
+.category-h1 {
+  font-size: 48px;
+  color: black;
+  margin-bottom: 40px;        /* ボタンとの間隔 */
+}
+
+.category-button {
+  margin: 10px;
+  padding: 10px 20px;
+  min-width: 150px;
+  width: auto;
+  font-size: 16px;
+  background-color: #d0f0ff;
+  color: #006400;
+  border: 2px solid #006400;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.category-button:hover {
+  background-color: #b0e0e6;  /* ホバー時の色変更 */
+}

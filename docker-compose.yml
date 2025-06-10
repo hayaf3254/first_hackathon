@@ -1,0 +1,65 @@
+services:
+  frontend:
+    build: ./frontend
+    image: frontend-image
+    container_name: frontend-container
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/app:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    networks:
+      - front-back
+
+  backend:
+    build: ./backend
+    image: backend-image
+    container_name: backend-container
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      - db
+    networks:
+      - front-back
+      - back-db
+    working_dir: /app/backend 
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    environment:
+      PYTHONPATH: /app
+
+  db:
+    image: mysql:8
+    container_name: db-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - back-db
+    healthcheck: # ヘルスチェックを追加
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s # 初期化に時間がかかる場合、起動を遅らせる
+
+volumes:
+  db-data:
+
+networks:
+  front-back:
+    name: front-back
+    driver: bridge
+  back-db:
+    name: back-db
+    driver: bridge

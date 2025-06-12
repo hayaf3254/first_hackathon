@@ -58,7 +58,17 @@
 - React（フロント）・FastAPI（バックエンド）・MySQL（DB）をDockerで統一管理
 - チーム開発や初期構築が簡単になるよう `docker-compose` によって一括起動可能
 
+## 🛠 使用技術 / Tech Stack
 
+### 👁 フロントエンド
+- React
+
+### 🧠 バックエンド
+- FastAPI
+
+### 🧪 その他ツール・サービス
+- Docker
+- Git / GitHub
 
 ## 💡 今後の実装予定（ロードマップ）
 

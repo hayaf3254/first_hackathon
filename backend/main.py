@@ -15,12 +15,13 @@ origins = [
 
 
 
+# ★ここで CORS を追加！
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,       # 許可するオリジンのリスト
-    allow_credentials=True,      # クッキーなどの認証情報を含むリクエストを許可
-    allow_methods=["*"],         # 全てのHTTPメソッド (GET, POST, PUT, DELETEなど) を許可
-    allow_headers=["*"],         # 全てのHTTPヘッダーを許可
+    allow_origins=["*"],  # ← とりあえず全部許可（本番は制限してOK）
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 

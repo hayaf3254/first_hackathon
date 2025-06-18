@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
 import models, schemas, database, data
+import traceback
 
 app = FastAPI()
 
@@ -11,6 +12,8 @@ origins = [
     "http://localhost",
     "http://localhost:5173",  # フロントエンドのURLとポートを許可
 ]
+
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -84,8 +87,10 @@ def create_db_tables_and_initial_data():
         print("Initial food categories loaded.")
 
     except Exception as e:
-        db.rollback() # エラーが発生したらロールバック
-        print(f"Error loading initial food categories: {e}")
+        db.rollback()
+        print("❌ Error loading initial food categories")
+        print(e)  # エラー内容を表示
+        traceback.print_exc()  # ← これでトレースバックを表示！
     finally:
         db.close() # セッションを閉じる
 

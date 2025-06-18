@@ -15,7 +15,7 @@ const SelectionTop = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/food-categories/`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/food-categories/`);
         if (!response.ok) {
           throw new Error('カテゴリの取得に失敗しました');
         }

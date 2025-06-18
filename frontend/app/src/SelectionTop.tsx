@@ -8,6 +8,7 @@ type Category = {
 };
 
 const SelectionTop = () => {
+  console.log(import.meta.env.VITE_API_BASE_URL);
   const [categories, setCategories] = useState<Category[]>([]);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();

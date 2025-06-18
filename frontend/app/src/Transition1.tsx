@@ -20,7 +20,7 @@ const Transition1 = () => {
   useEffect(() => {
     const fetchAll = async () => {
       try {
-        const res = await fetch('http://localhost:8000/food-categories/');
+        const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/food-categories/`);
         if (!res.ok) throw new Error('親カテゴリ取得に失敗しました');
         const data: Category[] = await res.json();
         setAllCategories(data);
@@ -28,7 +28,7 @@ const Transition1 = () => {
         const parent = data.find((cat) => cat.name === selectedName);
         if (!parent) throw new Error('選択されたカテゴリが見つかりません');
 
-        const childRes = await fetch(`http://localhost:8000/food-categories/?parent_id=${parent.id}`);
+        const childRes = await fetch(`${process.env.REACT_APP_API_BASE_URL}/food-categories/?parent_id=${parent.id}`);
         if (!childRes.ok) throw new Error('子カテゴリ取得に失敗しました');
         const children: Category[] = await childRes.json();
         setChildCategories(children);

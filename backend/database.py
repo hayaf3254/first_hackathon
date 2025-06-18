@@ -26,3 +26,10 @@ engine = create_engine(
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
+
+print("Loaded ENV:")
+print("HOST:", DB_HOST)
+print("PORT:", DB_PORT)
+print("USER:", DB_USER)
+print("PASSWORD:", DB_PASSWORD)
+print("NAME:", DB_NAME)

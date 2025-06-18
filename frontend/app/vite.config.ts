@@ -3,11 +3,12 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/',
   server: {
-    host: '0.0.0.0', // これも入れておく
-    port: 5173,     // これも入れておく
+    host: '0.0.0.0',
+    port: 5173,
     watch: {
-      usePolling: true // Docker環境でホットリロードが効かない場合の対策
+      usePolling: true
     }
   }
 })

@@ -6,7 +6,9 @@ from sqlalchemy.orm import Session
 import models, schemas, database, data
 import traceback
 
-app = FastAPI()
+from fastapi import FastAPI
+
+app = FastAPI(trust_forwarded_headers=True)
 
 origins = [
     "http://localhost",
@@ -130,3 +132,7 @@ def get_food_category_by_id(category_id: int, db: Session = Depends(get_db)):
     if category is None:
         raise HTTPException(status_code=404, detail="Category not found")
     return category
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8080, proxy_headers=True)

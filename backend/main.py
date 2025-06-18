@@ -3,7 +3,7 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-from backend import models, schemas, database, data
+import models, schemas, database, data
 
 app = FastAPI()
 

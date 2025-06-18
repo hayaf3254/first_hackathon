@@ -4,6 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 import os
 from dotenv import load_dotenv  # ← 追加
+import os
 
 # .envファイル読み込み
 load_dotenv()
@@ -28,9 +29,8 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
 
-print("Loaded ENV:")
-print("HOST:", DB_HOST)
-print("PORT:", DB_PORT)
-print("USER:", DB_USER)
-print("PASSWORD:", DB_PASSWORD)
-print("NAME:", DB_NAME)
+print("MYSQLHOST:", os.environ.get("MYSQLHOST"))
+print("MYSQLPORT:", os.environ.get("MYSQLPORT"))
+print("MYSQLUSER:", os.environ.get("MYSQLUSER"))
+print("MYSQLPASSWORD:", os.environ.get("MYSQLPASSWORD"))
+print("MYSQLDATABASE:", os.environ.get("MYSQLDATABASE"))

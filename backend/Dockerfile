@@ -4,13 +4,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* 
 
 # コンテナ内の作業ディレクトリを設定
-WORKDIR /app/backend
+WORKDIR /app
 
 # 依存関係ファイル（requirements.txt）を先にコピー
-COPY requirements.txt ./
+COPY backend/requirements.txt ./backend/
 
 # 依存関係をインストール
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r backend/requirements.txt
 
 # アプリケーションのソースコードを全てコピー
 COPY . .

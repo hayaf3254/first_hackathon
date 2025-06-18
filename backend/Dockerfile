@@ -13,7 +13,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # アプリケーションのソースコードを全てコピー
-# COPY . .
+COPY . .
 
 # FastAPIのサーバーを起動
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8080"]

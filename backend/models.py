@@ -2,7 +2,7 @@ from sqlalchemy import Boolean, Column, Integer, String, Text, DateTime, Foreign
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 
-from .database import Base
+from database import Base
 
 class FoodCategory(Base):
     __tablename__ = "food_categories"

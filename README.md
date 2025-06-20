@@ -1,6 +1,8 @@
 # 🌀 チョイス!! – 優柔不断を解決する決断サポートWebアプリ
 
 [スライド]　https://www.canva.com/design/DAGpuzNJTlI/ciFDuT2YFsbk5nWOKcCXmw/edit
+[デプロイ] https://first-hackathon-q475.vercel.app/
+※デプロイのみ個人
 
 ## 担当箇所:フロントエンド
 最初の画面と最終画面の制作、デザイン提案、バックエンドから受け取ったAPIを表示する箇所
@@ -73,6 +75,9 @@
 - Docker
 - Git / GitHub
 
+### 🚀 デプロイ
+- vercel
+- Rasilway
 - - -
 ## 技術選定理由
 - Reactはチームでコンポーネント管理がしやすいため

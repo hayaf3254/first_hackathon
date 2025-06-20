@@ -11,6 +11,7 @@ from fastapi import FastAPI
 app = FastAPI(trust_forwarded_headers=True)
 
 origins = [
+    "https://first-hackathon-q475.vercel.app",
     "http://localhost",
     "http://localhost:5173",  # フロントエンドのURLとポートを許可
 ]
@@ -20,7 +21,7 @@ origins = [
 # ★ここで CORS を追加！
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # ← とりあえず全部許可（本番は制限してOK）
+    allow_origins=origins,  # 許可するオリジンのリスト
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

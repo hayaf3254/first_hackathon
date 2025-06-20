@@ -1,7 +1,8 @@
 # 🌀 チョイス!! – 優柔不断を解決する決断サポートWebアプリ
-
 [スライド]　https://www.canva.com/design/DAGpuzNJTlI/ciFDuT2YFsbk5nWOKcCXmw/edit
+
 [デプロイ] https://first-hackathon-q475.vercel.app/
+
 ※デプロイのみ個人
 
 ## 担当箇所:フロントエンド
